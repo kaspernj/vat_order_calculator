@@ -4,6 +4,7 @@ AllCops:
   Exclude:
     - db/schema.rb
     - spec/dummy/db/schema.rb
+    - vat_order_calculator.gemspec
 
 Lint/AmbiguousBlockAssociation:
   Enabled: false

@@ -9,6 +9,9 @@ rescue Bundler::BundlerError => e
 end
 require "rake"
 
+require "best_practice_project"
+BestPracticeProject.load_tasks
+
 require "jeweler"
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
