@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.date = "2017-10-01"
   s.description = "A library to calculate vat based on order data".freeze
   s.email = "kaspernj@gmail.com".freeze
+  s.executables = ["bundler".freeze, "htmldiff".freeze, "jeweler".freeze, "ldiff".freeze, "nokogiri".freeze, "rackup".freeze, "rake".freeze, "ri".freeze, "rspec".freeze, "rubocop".freeze, "ruby-parse".freeze, "ruby-rewrite".freeze, "semver".freeze]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -28,14 +29,28 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bin/bundler",
+    "bin/htmldiff",
+    "bin/jeweler",
+    "bin/ldiff",
+    "bin/nokogiri",
+    "bin/rackup",
+    "bin/rake",
+    "bin/ri",
+    "bin/rspec",
+    "bin/rubocop",
+    "bin/ruby-parse",
+    "bin/ruby-rewrite",
+    "bin/semver",
     "lib/vat_order_calculator.rb",
     "shippable.yml",
     "spec/spec_helper.rb",
-    "spec/vat_order_calculator_spec.rb"
+    "spec/vat_order_calculator_spec.rb",
+    "vat_order_calculator.gemspec"
   ]
   s.homepage = "https://github.com/kaspernj/vat_order_calculator".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "2.6.11".freeze
+  s.rubygems_version = "2.6.8".freeze
   s.summary = "A library to calculate vat based on order data".freeze
 
   if s.respond_to? :specification_version then
