@@ -13,7 +13,7 @@ class VatOrderCalculator
     if base_country == country
       JSONVAT.country(country).rate
     elsif private_customer
-      JSONVAT.country(base_country).rate
+      JSONVAT.country(country).rate
     else
       0.0
     end
