@@ -13,10 +13,10 @@ require "jeweler"
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "vat_order_calculator"
-  gem.homepage = "http://github.com/kaspernj-advokurser/vat_order_calculator"
+  gem.homepage = "https://github.com/kaspernj/vat_order_calculator"
   gem.license = "MIT"
-  gem.summary = %(TODO: one-line summary of your gem)
-  gem.description = %(TODO: longer description of your gem)
+  gem.summary = %(A library to calculate vat based on order data)
+  gem.description = %(A library to calculate vat based on order data)
   gem.email = "kaspernj@gmail.com"
   gem.authors = ["kaspernj"]
   # dependencies defined in Gemfile
