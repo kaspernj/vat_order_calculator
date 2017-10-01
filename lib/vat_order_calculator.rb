@@ -1,21 +1,7 @@
-require "json_vat"
+module VatOrderCalculator
+  path = "#{File.dirname(__FILE__)}/vat_order_calculator"
 
-class VatOrderCalculator
-  attr_reader :base_country, :country, :private_customer
-
-  def initialize(base_country:, country:, private_customer:)
-    @base_country = base_country
-    @country = country
-    @private_customer = private_customer
-  end
-
-  def vat_rate
-    if base_country == country
-      JSONVAT.country(country).rate
-    elsif private_customer
-      JSONVAT.country(country).rate
-    else
-      0.0
-    end
-  end
+  autoload :CreditCardCountry, "#{path}/credit_card_country"
+  autoload :VatNumber, "#{path}/vat_number"
+  autoload :VatRate, "#{path}/vat_rate"
 end
