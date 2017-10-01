@@ -1,7 +1,11 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require "spec_helper"
 
-describe 'VatOrderCalculator' do
-  it 'fails' do
-    fail 'hey buddy, you should probably rename this file and start specing for real'
+describe VatOrderCalculator do
+  describe "#vat_rate" do
+    it "returns base country vat rate if same country and company" do
+      calculator = VatOrderCalculator.new(base_country: "DK", country: "DK", private_customer: false)
+
+      expect(calculator.vat_rate).to eq 25.0
+    end
   end
 end
