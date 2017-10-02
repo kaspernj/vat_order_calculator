@@ -9,7 +9,7 @@ class VatOrderCalculator::VatRate
     @private_customer = private_customer
   end
 
-  def vat_rate
+  def rate
     if base_country == country
       JSONVAT.country(country).rate
     elsif private_customer

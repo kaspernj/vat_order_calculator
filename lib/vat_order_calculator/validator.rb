@@ -1,9 +1,9 @@
 class VatOrderCalculator::Validator
-  attr_reader :base_country_code, :country_code, :errors, :private_customer
+  attr_reader :args, :base_country, :country, :errors, :private_customer
 
-  def initialize(base_country_code:, country_code:, private_customer:, **args)
-    @base_country_code = base_country_code
-    @country_code = country_code
+  def initialize(base_country:, country:, private_customer:, **args)
+    @base_country = base_country
+    @country = country
     @private_customer = private_customer
     @args = args
     @errors = []
@@ -24,13 +24,13 @@ class VatOrderCalculator::Validator
     end
   end
 
+  def vat_rate
+    @_vat_rate ||= VatOrderCalculator::VatRate.new(base_country: base_country, country: country, private_customer: private_customer)
+  end
+
 private
 
   def vat_number
-    @_vat_number ||= VatNumber.new(vat_number: args[:vat_number])
-  end
-
-  def vat_rate
-    @_vat_rate ||= VatRate.new(base_country: base_country, country: country, private_customer: private_customer)
+    @_vat_number ||= VatOrderCalculator::VatNumber.new(vat_number: args[:vat_number])
   end
 end
